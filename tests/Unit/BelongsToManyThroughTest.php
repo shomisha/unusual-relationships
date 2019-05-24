@@ -51,7 +51,7 @@ class BelongsToManyThroughTest extends HasManyThroughTest
 
     protected function prepareDatabase(): void
     {
-        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations/BelongsToManyThrough');
+        $this->loadMigrationsFrom(__DIR__ . '/../database/migrations');
 
         $this->withFactories(__DIR__ . '/../database/factories');
     }
