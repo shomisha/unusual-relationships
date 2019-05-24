@@ -2,11 +2,10 @@
 
 /* @var $factory \Illuminate\Database\Eloquent\Factory */
 
-use App\Model;
 use Faker\Generator as Faker;
 
-$factory->define(Model::class, function (Faker $faker) {
+$factory->define(\Shomisha\UnusualRelationships\Test\Models\Performer::class, function (Faker $faker) {
     return [
-        //
+        'name' => $faker->name,
     ];
 });
