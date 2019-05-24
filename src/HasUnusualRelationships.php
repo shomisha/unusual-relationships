@@ -6,11 +6,12 @@ namespace Shomisha\UnusualRelationships;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
-use Shomisha\UnusualRelationships\Relationships\HasManyThroughMany;
+use Shomisha\UnusualRelationships\Relationships\BelongsToManyThrough;
+use Shomisha\UnusualRelationships\Relationships\HasManyThroughBelongsTo;
 
 trait HasUnusualRelationships
 {
-    protected function hasManyThroughMany(string $related, string $through, string $foreign = null, string $pivot = null, string $pivotRelatedForeign = null, $pivotThroughForeign = null)
+    protected function belongsToManyThrough(string $related, string $through, string $foreign = null, string $pivot = null, string $pivotRelatedForeign = null, $pivotThroughForeign = null)
     {
         /** @var \Illuminate\Database\Eloquent\Model $relatedInstance */
         $relatedInstance = new $related;
@@ -18,7 +19,7 @@ trait HasUnusualRelationships
         /** @var \Illuminate\Database\Eloquent\Model $throughInstance */
         $throughInstance = new $through;
 
-        return new HasManyThroughMany(
+        return new BelongsToManyThrough(
             $relatedInstance->newQuery(),
             $this,
             $relatedInstance,
