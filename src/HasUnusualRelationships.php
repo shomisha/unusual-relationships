@@ -44,10 +44,8 @@ trait HasUnusualRelationships
      */
     protected function guessPivot(...$models)
     {
-        $tables = collect($models)->map(function (Model $model) {
+        return collect($models)->map(function (Model $model) {
             return Str::singular($model->getTable());
-        })->sort();
-
-        return $tables->join('_');
+        })->sort()->join('_');
     }
 }
