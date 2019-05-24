@@ -16,6 +16,6 @@ class Performer extends Model
 
     public function flights()
     {
-        return $this->hasManyThroughMany(Flight::class, Member::class);w
+        return $this->belongsToManyThrough(Flight::class, Member::class);
     }
 }
