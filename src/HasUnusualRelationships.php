@@ -31,11 +31,6 @@ trait HasUnusualRelationships
         );
     }
 
-    protected function hasManyThroughOne(string $related, string $one)
-    {
-
-    }
-
     /**
      * Guess the pivot table name for the provided Models.
      *
