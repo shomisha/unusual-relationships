@@ -57,16 +57,16 @@ class BelongsToManyThrough extends HasMany
 
         $this->query->select([
             "{$relatedTable}.*",
-            "through_table.{$this->foreignOnThrough}",
+            "{$throughTable}.{$this->foreignOnThrough}",
         ]);
 
         $this->query->join("{$this->pivotTable} as pivot_table", "pivot_table.{$this->relatedForeign}", '=', "{$relatedTable}.{$relatedKey}");
-        $this->query->join("{$throughTable} as through_table", "through_table.{$throughKey}", "=", "pivot_table.{$this->throughForeign}");
+        $this->query->join("{$throughTable}", "{$throughTable}.{$throughKey}", "=", "pivot_table.{$this->throughForeign}");
 
         $this->query->distinct();
 
         if (static::$constraints) {
-            $this->query->where("through_table.{$this->foreignOnThrough}", $this->getParentKey());
+            $this->query->where("{$throughTable}.{$this->foreignOnThrough}", $this->getParentKey());
         }
     }
 
@@ -81,6 +81,8 @@ class BelongsToManyThrough extends HasMany
             return $model->getKey();
         });
 
-        $this->query->whereIn("through_table.{$this->foreignOnThrough}", $keys);
+        $throughTable = $this->through->getTable();
+
+        $this->query->whereIn("{$throughTable}.{$this->foreignOnThrough}", $keys);
     }
 }
