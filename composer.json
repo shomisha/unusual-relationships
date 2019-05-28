@@ -1,11 +1,19 @@
 {
     "name": "shomisha/unusual-relationships",
     "description": "This package offers a trait which provides your models with the ability to have relationships not included within standard Laravel installations.",
+    "keywords": [
+        "laravel",
+        "relationships",
+        "eloquent",
+        "model",
+        "database"
+    ],
+    "homepage": "https://github.com/shomisha/unusual-relationships",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Misa Kovic",
+            "name": "Miša Kovic",
             "email": "misa95kovic@gmail.com"
         }
     ],
@@ -14,7 +22,8 @@
         "php": "~7.0"
     },
     "require-dev": {
-        "orchestra/testbench": "~3.8"
+        "orchestra/testbench": "~3.8",
+        "phpunit/phpunit": "^7.0"
     },
     "autoload": {
         "psr-4": {
@@ -25,5 +34,8 @@
         "psr-4": {
             "\\Shomisha\\UnusualRelationships\\Test\\": "tests"
         }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit --config tests/phpunit.xml --bootstrap vendor/autoload.php"
     }
 }
