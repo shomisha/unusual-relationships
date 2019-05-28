@@ -27,12 +27,12 @@
     },
     "autoload": {
         "psr-4": {
-            "\\Shomisha\\UnusualRelationships\\": "src"
+            "Shomisha\\UnusualRelationships\\": "src"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "\\Shomisha\\UnusualRelationships\\Test\\": "tests"
+            "Shomisha\\UnusualRelationships\\Test\\": "tests"
         }
     },
     "scripts": {
