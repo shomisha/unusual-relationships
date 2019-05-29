@@ -2,8 +2,8 @@
 
 namespace Shomisha\UnusualRelationships\Test\Unit;
 
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Shomisha\UnusualRelationships\Test\Models\Flight;
 use Shomisha\UnusualRelationships\Test\Models\Member;
 use Shomisha\UnusualRelationships\Test\Models\Performer;
@@ -28,7 +28,7 @@ class BelongsToManyThroughTest extends HasManyThroughTest
         $memberId = $through->id;
         $memberCollection = collect([$through]);
 
-        return factory(Flight::class, $count)->create()->each(function (Flight $flight) use($memberCollection, $memberId) {
+        return factory(Flight::class, $count)->create()->each(function (Flight $flight) use ($memberCollection, $memberId) {
             $flight->members()->attach([$memberId]);
             $flight->setRelation('members', $memberCollection);
         });

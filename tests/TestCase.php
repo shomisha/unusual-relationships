@@ -25,7 +25,7 @@ class TestCase extends OrchestraTestCase
             $original = $original->toArray();
         }
         if ($message === null) {
-            $message = "The two arrays do not match.";
+            $message = 'The two arrays do not match.';
         }
 
         $this->assertEmpty(array_diff($expected, $original), $message);

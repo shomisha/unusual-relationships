@@ -1,12 +1,11 @@
 <?php
 
-
 namespace Shomisha\UnusualRelationships\Test\Unit\Abstractions;
 
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Illuminate\Support\Collection;
+use Illuminate\Database\Eloquent\Model;
 use Shomisha\UnusualRelationships\Test\TestCase;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 abstract class HasManyThroughTest extends TestCase
 {
@@ -24,7 +23,7 @@ abstract class HasManyThroughTest extends TestCase
      * @param int $count
      * @return \Illuminate\Support\Collection
      */
-    protected abstract function createParents(int $count = 1): Collection;
+    abstract protected function createParents(int $count = 1): Collection;
 
     /**
      * Create the through instances without storing them within the test class.
@@ -32,7 +31,7 @@ abstract class HasManyThroughTest extends TestCase
      * @param int $count
      * @return \Illuminate\Support\Collection
      */
-    protected abstract function createThroughsForParent(Model $parent, int $count = 1): Collection;
+    abstract protected function createThroughsForParent(Model $parent, int $count = 1): Collection;
 
     /**
      * Create relationship instances for the provided through instance.
@@ -41,7 +40,7 @@ abstract class HasManyThroughTest extends TestCase
      * @param int $count
      * @return \Illuminate\Support\Collection
      */
-    protected abstract function createRelationsForThrough(Model $through, int $count = 1): Collection;
+    abstract protected function createRelationsForThrough(Model $through, int $count = 1): Collection;
 
     /**
      * Attach the specified throughs to the specified related model.
@@ -50,26 +49,26 @@ abstract class HasManyThroughTest extends TestCase
      * @param \Illuminate\Database\Eloquent\Model $related
      * @return bool
      */
-    protected abstract function attachThroughsToRelated(Collection $throughs, Model $related): void;
+    abstract protected function attachThroughsToRelated(Collection $throughs, Model $related): void;
 
     /**
      * Returns the name of the relationship used within the parent model.
      *
      * @return string
      */
-    protected abstract function relationName(): string;
+    abstract protected function relationName(): string;
 
     /**
      * Return the class name of the related model.
      *
      * @return string
      */
-    protected abstract function relatedModel(): string;
+    abstract protected function relatedModel(): string;
 
     /**
      * A hook designed for loading migrations and factories.
      */
-    protected abstract function prepareDatabase(): void;
+    abstract protected function prepareDatabase(): void;
 
     protected function setUp(): void
     {
@@ -127,7 +126,7 @@ abstract class HasManyThroughTest extends TestCase
 
             $through = $this->createThroughsForParent($parent)->first();
             return [
-                $parent->id => $this->createRelationsForThrough($through)->first()
+                $parent->id => $this->createRelationsForThrough($through)->first(),
             ];
         });
 

@@ -3,8 +3,8 @@
 
 namespace Shomisha\UnusualRelationships\Relationships;
 
-use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class BelongsToManyThrough extends HasMany
@@ -61,7 +61,7 @@ class BelongsToManyThrough extends HasMany
         ]);
 
         $this->query->join("{$this->pivotTable} as pivot_table", "pivot_table.{$this->relatedForeign}", '=', "{$relatedTable}.{$relatedKey}");
-        $this->query->join("{$throughTable}", "{$throughTable}.{$throughKey}", "=", "pivot_table.{$this->throughForeign}");
+        $this->query->join("{$throughTable}", "{$throughTable}.{$throughKey}", '=', "pivot_table.{$this->throughForeign}");
 
         $this->query->distinct();
 

@@ -3,11 +3,9 @@
 
 namespace Shomisha\UnusualRelationships;
 
-
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Illuminate\Database\Eloquent\Model;
 use Shomisha\UnusualRelationships\Relationships\BelongsToManyThrough;
-use Shomisha\UnusualRelationships\Relationships\HasManyThroughBelongsTo;
 
 trait HasUnusualRelationships
 {
