@@ -1,8 +1,11 @@
 # Laravel Unusual Relationships
 
 [![Latest Stable Version](https://poser.pugx.org/shomisha/unusual-relationships/v/stable)](https://packagist.org/packages/shomisha/unusual-relationships)
+[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE.md)
 [![Build Status](https://travis-ci.org/weareneopix/laravel-model-translation.svg?branch=master)](https://travis-ci.org/shomisha/unusual-relationships.svg?branch=master)
-[![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.md)
+[![StyleCI](https://github.styleci.io/repos/188415882/shield?branch=master&style=flat)](https://github.styleci.io/repos/188415882)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/shomisha/unusual-relationships/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/shomisha/unusual-relationships/?branch=master)
+
 
 This package is meant to provide its users with an API to accessing relationships that aren't included in Laravel's base installation. 
 It achieves this effect by utilizing a trait which in turn instantiates custom relationship classes which rely on Laravel's relationship scaffolding.
