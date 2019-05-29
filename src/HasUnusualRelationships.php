@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Shomisha\UnusualRelationships;
 
 use Illuminate\Support\Str;

@@ -1,6 +1,5 @@
 <?php
 
-
 namespace Shomisha\UnusualRelationships\Relationships;
 
 use Illuminate\Database\Eloquent\Model;
